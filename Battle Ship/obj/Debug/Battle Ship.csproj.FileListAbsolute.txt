@@ -1,0 +1,10 @@
+C:\Users\Elwynn\Desktop\Battle Ship\Battle Ship\bin\Debug\Battle Ship.exe.config
+C:\Users\Elwynn\Desktop\Battle Ship\Battle Ship\bin\Debug\Battle Ship.exe
+C:\Users\Elwynn\Desktop\Battle Ship\Battle Ship\bin\Debug\Battle Ship.pdb
+C:\Users\Elwynn\Desktop\Battle Ship\Battle Ship\obj\Debug\Battle Ship.csprojResolveAssemblyReference.cache
+C:\Users\Elwynn\Desktop\Battle Ship\Battle Ship\obj\Debug\Battle_Ship.Form1.resources
+C:\Users\Elwynn\Desktop\Battle Ship\Battle Ship\obj\Debug\Battle_Ship.Properties.Resources.resources
+C:\Users\Elwynn\Desktop\Battle Ship\Battle Ship\obj\Debug\Battle Ship.csproj.GenerateResource.Cache
+C:\Users\Elwynn\Desktop\Battle Ship\Battle Ship\obj\Debug\Battle Ship.exe
+C:\Users\Elwynn\Desktop\Battle Ship\Battle Ship\obj\Debug\Battle Ship.pdb
+C:\Users\Elwynn\Desktop\Battle Ship\Battle Ship\obj\Debug\Battle_Ship.Form2.resources
