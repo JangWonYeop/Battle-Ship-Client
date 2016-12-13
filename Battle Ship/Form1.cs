@@ -16,7 +16,7 @@ namespace Battle_Ship
 {
     public partial class Form1 : Form
     {
-        const int port = 12327;
+        const int port = 7036;
         const String server = "163.180.116.24";
 
         public TcpClient client;
@@ -62,11 +62,19 @@ namespace Battle_Ship
                 Console.WriteLine("Received: {0}", responseData);
 
                 // 출력
-                //MessageBox.Show(responseData);
+                MessageBox.Show(responseData);
 
                 // Program.cs에 TcpClient, NetworkStream 넘겨주기 ?
                 // form2 실행
                 Form2 form2 = new Form2(client, stream);
+
+                /*
+                form2.TopLevel = false;
+                form2.TopMost = true;
+                form2.Parent = this;
+                Panel
+                */
+                 
                 form2.ShowDialog();
             }
             catch (ArgumentNullException ex)

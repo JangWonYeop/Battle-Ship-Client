@@ -1,0 +1,9 @@
+C:\Users\Elwynn\Desktop\Battle Ship\Battle Ship\bin\Release\Battle Ship.exe.config
+C:\Users\Elwynn\Desktop\Battle Ship\Battle Ship\bin\Release\Battle Ship.exe
+C:\Users\Elwynn\Desktop\Battle Ship\Battle Ship\bin\Release\Battle Ship.pdb
+C:\Users\Elwynn\Desktop\Battle Ship\Battle Ship\obj\Release\Battle_Ship.Form1.resources
+C:\Users\Elwynn\Desktop\Battle Ship\Battle Ship\obj\Release\Battle_Ship.Form2.resources
+C:\Users\Elwynn\Desktop\Battle Ship\Battle Ship\obj\Release\Battle_Ship.Properties.Resources.resources
+C:\Users\Elwynn\Desktop\Battle Ship\Battle Ship\obj\Release\Battle Ship.csproj.GenerateResource.Cache
+C:\Users\Elwynn\Desktop\Battle Ship\Battle Ship\obj\Release\Battle Ship.exe
+C:\Users\Elwynn\Desktop\Battle Ship\Battle Ship\obj\Release\Battle Ship.pdb
