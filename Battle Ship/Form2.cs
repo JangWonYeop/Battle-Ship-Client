@@ -40,6 +40,32 @@ namespace Battle_Ship
             // 선공일경우, 바로 공격 위치 선택, 후공일경우 대기
             if (seq == 0)
             {
+                // your turn 읽기
+                Byte[] data = new Byte[256];
+                String responseData = String.Empty;
+                Int32 bytes = stream.Read(data, 0, data.Length);
+                responseData = System.Text.Encoding.UTF8.GetString(data, 0, bytes);
+                Console.WriteLine("Received: {0}", responseData);
+
+                if(responseData.ElementAt(0) == '9')
+                {
+                    MessageBox.Show("Game Over");
+
+                    String message = "Client game over.";
+                    data = System.Text.Encoding.ASCII.GetBytes(message);
+                    stream.Write(data, 0, data.Length);
+                    Console.WriteLine("Sent: {0}", message);
+
+                    // 접속 종료
+                    client.Close();
+
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show(responseData);
+                }
+
                 this.Text = "나의 턴입니다.";
 
                 // 공격 그리드뷰 초기화
@@ -78,7 +104,39 @@ namespace Battle_Ship
                 Int32 bytes = stream.Read(data, 0, data.Length);
                 responseData = System.Text.Encoding.UTF8.GetString(data, 0, bytes);
                 Console.WriteLine("Received: {0}", responseData);
-                MessageBox.Show(responseData);
+
+                if (responseData.ElementAt(0) == '9')
+                {
+                    MessageBox.Show("축하합니다.\n승리했습니다.");
+
+                    String message = "Client game over.";
+                    data = System.Text.Encoding.ASCII.GetBytes(message);
+                    stream.Write(data, 0, data.Length);
+                    Console.WriteLine("Sent: {0}", message);
+
+                    client.Close();
+
+                    this.Close();
+                    return;
+                }
+                else if(responseData.ElementAt(0) == '8')
+                {
+                    MessageBox.Show("패배했습니다.");
+
+                    String message = "Client game over.";
+                    data = System.Text.Encoding.ASCII.GetBytes(message);
+                    stream.Write(data, 0, data.Length);
+                    Console.WriteLine("Sent: {0}", message);
+
+                    client.Close();
+
+                    this.Close();
+                    return;
+                }
+                else
+                {
+                    MessageBox.Show(responseData);
+                }
 
                 /*
                 Byte[] data = new Byte[256];
@@ -94,7 +152,7 @@ namespace Battle_Ship
                 bytes = stream.Read(data, 0, data.Length);
                 responseData = System.Text.Encoding.UTF8.GetString(data, 0, bytes);
                 Console.WriteLine("Received: {0}", responseData);
-                MessageBox.Show(responseData);
+                //MessageBox.Show(responseData);
 
                 // 공격 정보를 이용하여 나의 맵 갱신
                 if (responseData.ElementAt(0).Equals('0'))
@@ -117,7 +175,8 @@ namespace Battle_Ship
                         }
                     }
 
-                    label1.Text = "공격당했습니다.\n2초후 나의 턴입니다.";
+                    label1.Text = "공격당했습니다.\n나의 턴입니다.";
+                    MessageBox.Show(responseData.ElementAt(0).ToString() + " 번이 공격당했습니다.");
                     matchingDataWithGridview();
                     //Thread.Sleep(2000);
                 }
@@ -679,7 +738,7 @@ namespace Battle_Ship
                 responseData = System.Text.Encoding.UTF8.GetString(data, 0, bytes);
                 Console.WriteLine("Received: {0}", responseData);
 
-                MessageBox.Show(responseData);
+                //MessageBox.Show(responseData);
 
                 // 선공일경우 - 0
                 if (responseData.ElementAt(0).Equals('0'))
